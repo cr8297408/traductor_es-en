@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "express": "^4.17.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "node-google-translate-skidz": "^1.1.2"
+  }
+}
