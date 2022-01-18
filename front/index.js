@@ -1,7 +1,7 @@
 const button = document.getElementById('enviar')
 button.addEventListener('click', () => {
-    const data = document.getElementById('text').value
-    var xhr = new XMLHttpRequest();
+    const text = (document.getElementById('text').value)
+    const data = {texto: text}
 
     let url = 'http://127.0.0.1:3000'
 
@@ -10,14 +10,14 @@ button.addEventListener('click', () => {
     fetch(`${url}/translate`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: { data },
+        body: JSON.stringify(data)
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        // output += data
+        // console.log(data.translation);
+        alert(`TRADUCCIÓN: ${data.translation}`)
       });
-
+    
     // console.log('click');
 
 })
